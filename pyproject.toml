@@ -6,6 +6,15 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "openai>=2.32.0",
+    "prompt-toolkit>=3.0.52",
+    "pydantic>=2.13.3",
     "python-dotenv>=1.2.2",
     "rich>=15.0.0",
 ]
+
+[project.scripts]
+sonder = "sonder.transports.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
