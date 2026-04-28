@@ -13,6 +13,11 @@ class PackageLayoutTest(unittest.TestCase):
 
         self.assertTrue(callable(cli.main))
 
+    def test_gateway_entrypoint_exists(self):
+        gateway = importlib.import_module("sonder.gateway.app")
+
+        self.assertTrue(callable(gateway.main))
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,0 +1,4 @@
+[telegram]
+enabled = true
+bot_token = "123456:replace-with-your-bot-token"
+allowed_users = ["123456789"]

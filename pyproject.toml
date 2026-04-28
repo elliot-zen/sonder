@@ -9,11 +9,13 @@ dependencies = [
     "prompt-toolkit>=3.0.52",
     "pydantic>=2.13.3",
     "python-dotenv>=1.2.2",
+    "python-telegram-bot>=22.7",
     "rich>=15.0.0",
 ]
 
 [project.scripts]
 sonder = "sonder.transports.cli:main"
+sonder-gateway = "sonder.gateway.app:main"
 
 [build-system]
 requires = ["hatchling"]
