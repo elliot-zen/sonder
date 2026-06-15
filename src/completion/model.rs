@@ -1,13 +1,5 @@
-#[derive(Debug, Clone)]
-pub struct CompletionRequest {
-    pub prompt: String,
-    pub preamble: Option<String>,
-}
+use crate::{CompletionRequest, CompletionResponse};
 
-#[derive(Debug, Clone)]
-pub struct CompletionResponse {
-    pub text: String,
-}
 pub trait CompletionModel {
     type Client;
 

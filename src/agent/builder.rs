@@ -1,24 +1,4 @@
-use crate::completion::{CompletionModel, CompletionRequest};
-
-#[derive(Debug, Clone)]
-pub struct Agent<M> {
-    model: M,
-    preamble: Option<String>,
-}
-
-impl<M> Agent<M>
-where
-    M: CompletionModel,
-{
-    pub async fn prompt(&self, input: impl Into<String>) -> anyhow::Result<String> {
-        let request = CompletionRequest {
-            prompt: input.into(),
-            preamble: self.preamble.clone(),
-        };
-        let response = self.model.completion(request).await?;
-        Ok(response.text)
-    }
-}
+use crate::{Agent, CompletionModel};
 
 #[derive(Debug, Clone)]
 pub struct AgentBuilder<M> {
